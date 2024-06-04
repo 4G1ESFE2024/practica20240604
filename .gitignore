@@ -1,0 +1,31 @@
+# Archivos generados por NetBeans
+nbproject/private/
+build/
+dist/
+
+# Dependencias y librerías descargadas
+lib/
+libs/
+*.jar
+
+# Archivos de configuración de NetBeans
+nb-configuration.xml
+nbactions.xml
+
+# Archivos de configuración de Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Archivo de configuración de Gradle
+.gradle/
+
+# Archivos de NetBeans y otros archivos temporales
+*~.lock
+*~
+*.swp
+*.bak
+*.tmp
+*.log
