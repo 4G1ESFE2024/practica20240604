@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class ComunDB {
     static String connectionUrl = "jdbc:sqlserver://localhost:1433;"
             + "database=Practica20240604DB;"
-            + "user=java2024;"
+            + "user=java0605;"
             + "password=12345;"
             + "loginTimeout=30;encrypt=false;trustServerCertificate=false";
      public static Connection obtenerConexion() throws SQLException {

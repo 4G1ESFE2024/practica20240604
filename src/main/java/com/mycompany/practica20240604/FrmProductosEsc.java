@@ -23,7 +23,7 @@ public class FrmProductosEsc extends javax.swing.JFrame {
 
     private OpcionesCRUD opcionCRUD;
     private Producto productActual = new Producto();
-    private HashMap<Integer, Categoria> mapCategorias = new HashMap<Integer,Categoria>();
+    private HashMap<Integer, Categoria> mapCategorias = new HashMap<Integer, Categoria>();
 
     /**
      * Creates new form FrmProductosEsc
@@ -163,6 +163,17 @@ public class FrmProductosEsc extends javax.swing.JFrame {
         return producto;
     }
 
+    private boolean validDatos() {
+        boolean valid = true;
+        if (jTxtNombre.getText().isEmpty()) {
+            valid = false;
+            JOptionPane.showMessageDialog(this,
+                    "El nombre es obligatorio", "Validar campo",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+        return valid;
+    }
+
     private void asingarDatos(Producto producto) {
         jTxtNombre.setText(producto.getNombre());
         jTxtADescripcion.setText(producto.getDescripcion());
@@ -236,21 +247,23 @@ public class FrmProductosEsc extends javax.swing.JFrame {
     }
     private void jBtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnGuardarActionPerformed
         if (null != opcionCRUD) // TODO add your handling code here:
-            switch (opcionCRUD) {
-                case CREAR:
-                    crearReg();
-                    this.setVisible(false);
-                    break;
-                case MODIFICAR:
-                    modificarReg();
-                    this.setVisible(false);
-                    break;
-                case ELIMINAR:
-                    eliminarReg();
-                    this.setVisible(false);
-                    break;
-                default:
-                    break;
+            if (validDatos()) {
+                switch (opcionCRUD) {
+                    case CREAR:
+                        crearReg();
+                        this.setVisible(false);
+                        break;
+                    case MODIFICAR:
+                        modificarReg();
+                        this.setVisible(false);
+                        break;
+                    case ELIMINAR:
+                        eliminarReg();
+                        this.setVisible(false);
+                        break;
+                    default:
+                        break;
+                }
             }
     }//GEN-LAST:event_jBtnGuardarActionPerformed
 

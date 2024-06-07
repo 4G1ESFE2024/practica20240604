@@ -7,6 +7,7 @@ package com.mycompany.practica20240604;
 import accesoadatos.ProductoDAL;
 import entidades.Categoria;
 import entidades.Producto;
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import utilerias.OpcionesCRUD;
@@ -50,6 +51,9 @@ public class FrmProductosLec extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre");
 
+        jBtnBuscar.setBackground(new java.awt.Color(0, 102, 255));
+        jBtnBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        jBtnBuscar.setMnemonic('B');
         jBtnBuscar.setText("Buscar");
         jBtnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +62,19 @@ public class FrmProductosLec extends javax.swing.JFrame {
         });
 
         jBtnIrACrear.setText("Ir a Crear");
+        jBtnIrACrear.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jBtnIrACrearFocusGained(evt);
+            }
+        });
+        jBtnIrACrear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jBtnIrACrearMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jBtnIrACrearMouseExited(evt);
+            }
+        });
         jBtnIrACrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnIrACrearActionPerformed(evt);
@@ -66,13 +83,13 @@ public class FrmProductosLec extends javax.swing.JFrame {
 
         jTableProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(jTableProductos);
@@ -225,6 +242,21 @@ public class FrmProductosLec extends javax.swing.JFrame {
         jTableProductos.setModel(modelTable);
 
     }//GEN-LAST:event_jBtnBuscarActionPerformed
+
+    private void jBtnIrACrearFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jBtnIrACrearFocusGained
+        // TODO add your handling code here:
+        jBtnIrACrear.setBackground(Color.RED);
+    }//GEN-LAST:event_jBtnIrACrearFocusGained
+
+    private void jBtnIrACrearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnIrACrearMouseEntered
+        // TODO add your handling code here:
+         jBtnIrACrear.setBackground(Color.RED);
+    }//GEN-LAST:event_jBtnIrACrearMouseEntered
+
+    private void jBtnIrACrearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnIrACrearMouseExited
+        // TODO add your handling code here:
+        jBtnIrACrear.setBackground(Color.BLUE);
+    }//GEN-LAST:event_jBtnIrACrearMouseExited
 
     /**
      * @param args the command line arguments
